@@ -117,7 +117,7 @@ const TutorLanding = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
-                  src="/images/Quizzes.png"
+                  src="/images/1.png"
                   alt="Create & Check Quizzes"
                   className="w-10 h-10 object-contain"
                 />
