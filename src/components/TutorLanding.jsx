@@ -98,16 +98,16 @@ const TutorLanding = () => {
         </div>
       </section>
 
-      {/* Teaching Excellence Section */}
+      {/* Your Provided Points Expanded Section */}
       <section className="relative w-full py-20 bg-[#011810] text-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header Section */}
           <div className="text-center mb-16">
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
-              Teaching Excellence
+              Your Provided Points Expanded
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
-              Access powerful tools and resources to enhance your teaching:
+              Powerful Tools for Tutors
             </p>
           </div>
 
@@ -117,16 +117,17 @@ const TutorLanding = () => {
             <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
-                  src="/images/1.png"
-                  alt="Teaching Resources"
+                  src="/images/Quizzes.png"
+                  alt="Create & Check Quizzes"
                   className="w-10 h-10 object-contain"
                 />
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">
-                Teaching Resources
+                Create & Check Quizzes
               </h3>
               <p className="text-white/80 leading-relaxed text-center mt-5">
-                Access comprehensive lesson plans and teaching materials.
+                Manage and grade quizzes with ease. Save time with automated
+                results and provide detailed feedback instantly.
               </p>
             </div>
 
@@ -134,15 +135,16 @@ const TutorLanding = () => {
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/Video.png"
-                  alt="Video Creation"
+                  alt="Host Online Classes"
                   className="w-10 h-10 object-contain"
                 />
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">
-                Video Creation
+                Host Online Classes
               </h3>
               <p className="text-white/80 leading-relaxed text-center mt-5">
-                Create engaging video content for your students.
+                Use interactive whiteboard and screen-sharing tools to make
+                classes engaging and effective.
               </p>
             </div>
 
@@ -150,15 +152,15 @@ const TutorLanding = () => {
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/Progress.png"
-                  alt="Student Analytics"
+                  alt="Progress Tracking"
                   className="w-10 h-10 object-contain"
                 />
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">
-                Student Analytics
+                Progress Tracking
               </h3>
               <p className="text-white/80 leading-relaxed text-center mt-5">
-                Track student progress and performance metrics.
+                See your improvement over time with analytics.
               </p>
             </div>
           </div>
@@ -169,15 +171,16 @@ const TutorLanding = () => {
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/247access.png"
-                  alt="Flexible Schedule"
+                  alt="Earn by Teaching"
                   className="w-10 h-10 object-contain"
                 />
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">
-                Flexible Schedule
+                Earn by Teaching
               </h3>
               <p className="text-white/80 leading-relaxed text-center mt-5">
-                Set your own hours and availability for tutoring sessions.
+                Enjoy flexible tutoring options with competitive payouts, on
+                your schedule.
               </p>
             </div>
 
@@ -185,15 +188,16 @@ const TutorLanding = () => {
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/Community.png"
-                  alt="Tutor Community"
+                  alt="Messaging & Chat Support"
                   className="w-10 h-10 object-contain"
                 />
               </div>
               <h3 className="text-xl font-bold mb-4 text-center">
-                Tutor Community
+                Messaging & Chat Support
               </h3>
               <p className="text-white/80 leading-relaxed text-center mt-5">
-                Connect with fellow tutors for collaboration and support.
+                Stay connected with students through built-in chat for guidance
+                and support.
               </p>
             </div>
           </div>
