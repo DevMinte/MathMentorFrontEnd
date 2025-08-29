@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100..900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+
+@font-face {
+  font-family: 'BerkshireSwash';
+  src: url('/font/BerkshireSwash-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@keyframes ping-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  75%, 100% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+.animate-ping-slow {
+  animation: ping-slow 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+#root {
+  width: 100vw;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: #020617;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.outline-text {
+  -webkit-text-stroke: 1px white;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0f172a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #16a34a;
+}
+
+/* 3D Transform utilities */
+.transform-3d {
+  transform-style: preserve-3d;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #22c55e 0%, #86efac 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+
+
+.bg-dark-900 {
+  background-color: #020617;
+}
+
+.bg-primary-300 {
+  background-color: #86efac;
+}
+
+.text-primary-300 {
+  color: #86efac;
+}
+
+.bg-primary-400 {
+  background-color: #4ade80;
+}
+
+.text-primary-400 {
+  color: #4ade80;
+}
+
+.bg-primary-500 {
+  background-color: #22c55e;
+}
+
+.text-primary-500 {
+  color: #22c55e;
+}
+
+.bg-blue-300 {
+  background-color: #93c5fd;
+}
+
+.text-blue-300 {
+  color: #93c5fd;
+}
+
+.bg-blue-400 {
+  background-color: #60a5fa;
+}
+
+.text-blue-400 {
+  color: #60a5fa;
+}
+
+.bg-blue-500 {
+  background-color: #3b82f6;
+}
+
+.text-blue-500 {
+  color: #3b82f6;
+}
+
+.bg-blue-600 {
+  background-color: #2563eb;
+}
+
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.bg-purple-300 {
+  background-color: #c4b5fd;
+}
+
+.text-purple-300 {
+  color: #c4b5fd;
+}
+
+/* Animation Keyframes */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Card Hover Effects */
+.hover-card {
+  transition: all 0.3s ease;
+  transform-style: preserve-3d;
+}
+
+.hover-card:hover {
+  transform: translateY(-5px) rotateX(5deg);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Custom Scrollbar for Testimonials */
+.testimonial-scrollbar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.testimonial-scrollbar::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+}
+
+.testimonial-scrollbar::-webkit-scrollbar-thumb {
+  background: #22c55e;
+  border-radius: 3px;
+}
+
+/* Responsive Typography */
+.text-xxs {
+  font-size: 0.65rem;
+  line-height: 1rem;
+}
+
+/* Custom Underline Animation */
+.hover-underline-animation {
+  display: inline-block;
+  position: relative;
+  color: #22c55e;
+}
+
+.hover-underline-animation:after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #22c55e;
+  transform-origin: bottom right;
+  transition: transform 0.3s ease-out;
+}
+
+.hover-underline-animation:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
