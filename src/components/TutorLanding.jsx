@@ -42,11 +42,11 @@ const TutorLanding = () => {
                   tutoring career online.
                 </p>
 
-                <div className="flex flex-col gap-3">
-                  <button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-6 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors">
+                <div className="flex flex-col gap-3 items-start">
+                  <button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-4 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors w-48">
                     <span>Become a Tutor →</span>
                   </button>
-                  <button className="rounded-md border border-white/30 px-6 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm">
+                  <button className="rounded-md border border-white/30 px-4 py-3 text-white hover:bg-white/15 transition-colors w-48 text-left">
                     Learn More
                   </button>
                 </div>
@@ -204,191 +204,230 @@ const TutorLanding = () => {
         </div>
       </section>
 
-      {/* Tutor Plans Section */}
-      <section className="relative w-full py-16 md:py-32 bg-[#002317] text-white">
-        {/* Background with specified gradient */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "linear-gradient(180deg, rgba(15, 75, 47, 0.3) 0%, rgba(157, 223, 102, 0.3) 100%)",
-          }}
-        />
-        {/* Darker edges overlay */}
-        <div
-          className="absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse at center, transparent 35%, rgba(0, 35, 23, 0.9) 75%, rgba(0, 35, 23, 1) 100%)",
-          }}
-        />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
-          {/* Header Section */}
-          <div className="text-center mb-6">
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 mt-4 md:mt-8">
-              Tutor Opportunities
+      {/* Plans That Work for You Section */}
+      <section className="relative w-full py-20 bg-[#011810] text-white">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+              Plans That Work for You
             </h2>
-            <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto px-4">
-              Choose the tutoring plan that fits your expertise and
-              availability.
+            <p className="text-xl text-white/80 max-w-3xl mx-auto">
+              No hidden fees, just clear and simple learning options.
             </p>
           </div>
 
-          {/* Main Content Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {/* Part-Time Plan Card */}
-            <div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center">
-              <h3 className="text-2xl font-bold text-white mb-2">Part-Time</h3>
-              <p className="text-[#00FF11] text-sm mb-4">
-                Perfect for getting started
-              </p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-white">$25</span>
-                <span className="text-white/70 text-lg">/hour</span>
-              </div>
-              <p className="text-[#00FF11] text-sm mb-6">Flexible hours</p>
-
-              {/* Features */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">
-                    Up to 10 hours/week
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Basic resources</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Community support</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Student matching</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-gray-400 mr-3">✗</span>
-                  <span className="text-white/60 text-sm">
-                    Priority scheduling
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-gray-400 mr-3">✗</span>
-                  <span className="text-white/60 text-sm">
-                    Advanced analytics
-                  </span>
-                </div>
-              </div>
-
-              <button className="w-full bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white font-semibold py-3 px-4 rounded-lg hover:from-[#16A34A] hover:to-[#22C55E] transition-all duration-300 mb-3">
-                Start Part-Time
-              </button>
-              <p className="text-center text-white/50 text-xs">
-                Flexible commitment
+          {/* Steps */}
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 items-start">
+            {/* Step 1: Sign Up */}
+            <div className="flex flex-col items-center text-center">
+              <p className="text-[#FFD700] text-7xl font-extrabold mb-4">1</p>
+              <h3 className="text-3xl font-bold mb-4">Sign Up</h3>
+              <p className="text-white/80 leading-relaxed">
+                Join our community in minutes by creating your free tutor
+                profile. Highlight your skills, set your subjects and
+                availability, and let students discover you easily.
               </p>
             </div>
 
-            {/* Full-Time Plan Card */}
-            <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg text-center">
-              <h3 className="text-2xl font-bold text-white mb-2">Full-Time</h3>
-              <p className="text-[#00FF11] text-sm mb-4">
-                Professional tutoring career
-              </p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-white">$35</span>
-                <span className="text-white/70 text-lg">/hour</span>
-              </div>
-              <p className="text-[#00FF11] text-sm mb-6">Guaranteed hours</p>
+            {/* Arrow 1 */}
+            <div className="hidden md:flex items-center justify-center h-full">
+              <svg
+                className="w-12 h-12 text-[#FFD700]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </div>
 
-              {/* Features */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">20+ hours/week</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Premium resources</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Priority support</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Advanced tools</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">
-                    Priority scheduling
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">
-                    Performance bonuses
-                  </span>
-                </div>
-              </div>
-
-              <button className="w-full bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white font-semibold py-3 px-4 rounded-lg hover:from-[#16A34A] hover:to-[#22C55E] transition-all duration-300 mb-3">
-                Go Full-Time
-              </button>
-              <p className="text-center text-white/50 text-xs">
-                Professional path
+            {/* Step 2: Teach Online */}
+            <div className="flex flex-col items-center text-center">
+              <p className="text-[#46DC7D] text-7xl font-extrabold mb-4">2</p>
+              <h3 className="text-3xl font-bold mb-4">Teach Online</h3>
+              <p className="text-white/80 leading-relaxed">
+                Engage students with interactive online classes, quizzes, and
+                assignments. Customize your lessons, track progress, and make
+                learning fun and effective from anywhere.
               </p>
             </div>
 
-            {/* Expert Plan Card */}
-            <div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center">
-              <h3 className="text-2xl font-bold text-white mb-2">Expert</h3>
-              <p className="text-[#00FF11] text-sm mb-4">Master tutor level</p>
-              <div className="mb-6">
-                <span className="text-4xl font-bold text-white">$50</span>
-                <span className="text-white/70 text-lg">/hour</span>
-              </div>
-              <p className="text-[#00FF11] text-sm mb-6">Premium rates</p>
+            {/* Arrow 2 */}
+            <div className="hidden md:flex items-center justify-center h-full">
+              <svg
+                className="w-12 h-12 text-[#FFD700]"
+                fill="currentColor"
+                viewBox="0 0 20 20"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10.293 15.707a1 1 0 010-1.414L14.586 10l-4.293-4.293a1 1 0 111.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+                <path
+                  fillRule="evenodd"
+                  d="M4.293 15.707a1 1 0 010-1.414L8.586 10 4.293 5.707a1 1 0 011.414-1.414l5 5a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0z"
+                  clipRule="evenodd"
+                ></path>
+              </svg>
+            </div>
 
-              {/* Features */}
-              <div className="space-y-3 mb-8">
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Unlimited hours</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">All resources</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">VIP support</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">Custom tools</span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">
-                    Priority scheduling
-                  </span>
-                </div>
-                <div className="flex items-center">
-                  <span className="text-[#00FF11] mr-3">✓</span>
-                  <span className="text-white text-sm">
-                    Leadership opportunities
-                  </span>
-                </div>
-              </div>
+            {/* Step 3: Get Paid */}
+            <div className="flex flex-col items-center text-center">
+              <p className="text-[#46DC7D] text-7xl font-extrabold mb-4">3</p>
+              <h3 className="text-3xl font-bold mb-4">Get Paid</h3>
+              <p className="text-white/80 leading-relaxed">
+                Earn confidently with our secure, hassle-free payout system. Get
+                paid promptly for every session you conduct, with full
+                transparency and easy tracking of your earnings.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-              <button className="w-full bg-gradient-to-r from-[#22C55E] to-[#16A34A] text-white font-semibold py-3 px-4 rounded-lg hover:from-[#16A34A] hover:to-[#22C55E] transition-all duration-300 mb-3">
-                Become Expert
-              </button>
-              <p className="text-center text-white/50 text-xs">Elite status</p>
+      {/* What Tutors Say Section */}
+      <section className="relative w-full py-20 bg-[#011810] text-white overflow-hidden">
+        {/* Background Gradient Image */}
+        <div className="absolute inset-0">
+          <img
+            src="/images/bg_gradient.png"
+            alt="Background Gradient"
+            className="w-full h-full object-cover opacity-100"
+          />
+        </div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl md:text-6xl font-bold mb-4">
+              What Tutors Say
+            </h2>
+          </div>
+
+          {/* Testimonial Cards Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {/* Testimonial Card 1 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                  <span className="text-gray-600 font-semibold">K</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-800">KaiB</p>
+                  <p className="text-gray-500 text-sm">· 22 Jul</p>
+                </div>
+                <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+                  You
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                KaiB was phenomenal with our dog, Max! We were first-time users
+                of a pet-sitting service and were quite nervous. Kai's
+                professionalism and warmth immediately put us at ease. She
+                visited twice a day for...
+              </p>
+              <a
+                href="#"
+                className="text-green-600 text-sm font-medium hover:text-green-700"
+              >
+                Read More
+              </a>
+            </div>
+
+            {/* Testimonial Card 2 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                  <span className="text-gray-600 font-semibold">K</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-800">KaiB</p>
+                  <p className="text-gray-500 text-sm">· 22 Jul</p>
+                </div>
+                <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+                  You
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                KaiB was phenomenal with our dog, Max! We were first-time users
+                of a pet-sitting service and were quite nervous. Kai's
+                professionalism and warmth immediately put us at ease. She
+                visited twice a day for...
+              </p>
+              <a
+                href="#"
+                className="text-green-600 text-sm font-medium hover:text-green-700"
+              >
+                Read More
+              </a>
+            </div>
+
+            {/* Testimonial Card 3 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                  <span className="text-gray-600 font-semibold">K</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-800">KaiB</p>
+                  <p className="text-gray-500 text-sm">· 22 Jul</p>
+                </div>
+                <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+                  You
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                KaiB was phenomenal with our dog, Max! We were first-time users
+                of a pet-sitting service and were quite nervous. Kai's
+                professionalism and warmth immediately put us at ease. She
+                visited twice a day for...
+              </p>
+              <a
+                href="#"
+                className="text-green-600 text-sm font-medium hover:text-green-700"
+              >
+                Read More
+              </a>
+            </div>
+
+            {/* Testimonial Card 4 */}
+            <div className="bg-white rounded-xl p-6 shadow-lg">
+              <div className="flex items-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
+                  <span className="text-gray-600 font-semibold">K</span>
+                </div>
+                <div className="flex-1">
+                  <p className="font-semibold text-gray-800">KaiB</p>
+                  <p className="text-gray-500 text-sm">· 22 Jul</p>
+                </div>
+                <span className="bg-purple-500 text-white text-xs px-2 py-1 rounded-full">
+                  You
+                </span>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed mb-4">
+                KaiB was phenomenal with our dog, Max! We were first-time users
+                of a pet-sitting service and were quite nervous. Kai's
+                professionalism and warmth immediately put us at ease. She
+                visited twice a day for...
+              </p>
+              <a
+                href="#"
+                className="text-green-600 text-sm font-medium hover:text-green-700"
+              >
+                Read More
+              </a>
             </div>
           </div>
         </div>
