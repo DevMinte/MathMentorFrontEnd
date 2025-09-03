@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "framer-motion";
 import tutorImage from "/images/tutor-3d-image.png";
 
 const TutorLanding = () => {
@@ -21,79 +22,81 @@ const TutorLanding = () => {
 
         <div className="relative mx-auto w-full max-w-7xl px-6 pt-16 pb-28">
           {/* Header Text */}
-          <p className="text-center text-[#FFD700] tracking-[0.12em] mb-3 text-[16px] md:text-[18px] font-light">
+          <motion.p className="text-center text-[#FFD700] tracking-[0.12em] mb-3 text-[16px] md:text-[18px] font-light" initial={{ opacity: 0, y: -10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} viewport={{ once: true, amount: 0.6 }}>
             Share knowledge. Make impact. Get rewarded.
-          </p>
+          </motion.p>
 
           {/* Main Title */}
-          <h1 className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6">
+          <motion.h1 className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true, amount: 0.5 }}>
             <span className="bg-gradient-to-r from-[#F5E04A] via-[#46DC7D] to-[#46DC7D] bg-clip-text text-transparent">
               Teach. Inspire. Earn
             </span>
-          </h1>
+          </motion.h1>
 
           {/* Main content layout */}
           <div className="max-w-6xl mx-auto px-6 lg:-mt-20">
-            <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16">
+            <motion.div className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16" initial="hidden" whileInView="show" transition={{ staggerChildren: 0.15 }} viewport={{ once: true, amount: 0.2 }}>
               {/* Left Content Box - Call to Action */}
-              <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-6 md:p-7 max-w-sm mx-auto lg:mx-0 lg:mr-[-100000px] lg:mt-56 z-20 lg:ml-[50px]">
+              <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-6 md:p-7 max-w-sm mx-auto lg:mx-0 lg:mr-[-100000px] lg:mt-56 z-20 lg:ml-[50px]" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: "easeOut" }} whileHover={{ scale: 1.01 }}>
                 <p className="text-white/90 leading-relaxed text-left mb-6">
                   Empower students with your knowledge while building your
                   tutoring career online.
                 </p>
 
                 <div className="flex flex-col gap-3 items-start">
-                  <button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-4 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors w-48">
+                  <motion.button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-4 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors w-48" whileTap={{ scale: 0.96 }} whileHover={{ x: 2 }}>
                     <span>Become a Tutor →</span>
-                  </button>
-                  <button className="rounded-md border border-white/30 px-4 py-3 text-white hover:bg-white/15 transition-colors w-48 text-left">
+                  </motion.button>
+                  <motion.button className="rounded-md border border-white/30 px-4 py-3 text-white hover:bg-white/15 transition-colors w-48 text-left" whileTap={{ scale: 0.96 }}>
                     Learn More
-                  </button>
+                  </motion.button>
                 </div>
-              </div>
+              </motion.div>
 
               {/* Central 3D Tutor Illustration */}
-              <div className="flex justify-center lg:ml-[-50px] z-10">
-                <img
+              <motion.div className="flex justify-center lg:ml-[-50px] z-10" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: "easeOut" }}>
+                <motion.img
                   src={tutorImage}
                   alt="3D Tutor Character"
                   className="w-[400px] md:w-[500px] lg:w-[600px] object-contain drop-shadow-lg animate-float"
                   style={{
                     animation: "float 6s ease-in-out infinite",
                   }}
+                  whileHover={{ rotate: 1.5 }}
+                  transition={{ type: "spring", stiffness: 120, damping: 12 }}
                 />
-              </div>
+              </motion.div>
 
               {/* Right Content Box - Statistics */}
-              <div className="max-w-md mx-auto lg:mx-0 lg:ml-[-100px] z-20">
-                <div className="grid grid-cols-2 gap-12">
+              <motion.div className="max-w-md mx-auto lg:mx-0 lg:ml-[-100px] z-20">
+                <motion.div className="grid grid-cols-2 gap-12">
                   {/* First Row - 2 statistics */}
-                  <div className="text-center lg:text-left">
+                  <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
                     <p className="text-[#FFD700] text-3xl font-bold mb-2">
                       5,000+
                     </p>
                     <p className="text-white/80 text-base">Number of reviews</p>
-                  </div>
-                  <div className="text-center lg:text-left">
+                  </motion.div>
+                  <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} viewport={{ once: true }}>
                     <p className="text-[#FFD700] text-3xl font-bold mb-2">
                       1M+
                     </p>
                     <p className="text-white/80 text-base">
                       Student booking trend
                     </p>
-                  </div>
+                  </motion.div>
                   {/* Second Row - 1 statistic (spans 2 columns) */}
-                  <div className="text-center lg:text-left col-span-2">
+                  <motion.div className="text-center lg:text-left col-span-2" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
                     <p className="text-[#FFD700] text-3xl font-bold mb-2">
                       100+
                     </p>
                     <p className="text-white/80 text-base">
                       Number of sessions booked
                     </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                  </motion.div>
+                </motion.div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
@@ -102,19 +105,19 @@ const TutorLanding = () => {
       <section className="relative w-full py-20 bg-[#011810] text-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header Section */}
-          <div className="text-center mb-16">
+          <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             <h2 className="text-5xl md:text-6xl font-bold mb-6">
               Your Provided Points Expanded
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               Powerful Tools for Tutors
             </p>
-          </div>
+          </motion.div>
 
           {/* Feature Cards */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Row 1 (3 cards) */}
-            <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+            <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: "easeOut" }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/1.png"
@@ -129,9 +132,9 @@ const TutorLanding = () => {
                 Manage and grade quizzes with ease. Save time with automated
                 results and provide detailed feedback instantly.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+            <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05, ease: "easeOut" }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/Video.png"
@@ -146,9 +149,9 @@ const TutorLanding = () => {
                 Use interactive whiteboard and screen-sharing tools to make
                 classes engaging and effective.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+            <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: "easeOut" }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
               <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                 <img
                   src="/images/Progress.png"
@@ -162,7 +165,7 @@ const TutorLanding = () => {
               <p className="text-white/80 leading-relaxed text-center mt-5">
                 See your improvement over time with analytics.
               </p>
-            </div>
+            </motion.div>
           </div>
 
           {/* Row 2 (centered 2 cards) */}
@@ -208,19 +211,19 @@ const TutorLanding = () => {
       <section className="relative w-full py-20 bg-[#011810] text-white">
         <div className="max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-16">
+          <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
               Plans That Work for You
             </h2>
             <p className="text-xl text-white/80 max-w-3xl mx-auto">
               No hidden fees, just clear and simple learning options.
             </p>
-          </div>
+          </motion.div>
 
           {/* Steps */}
-          <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 items-start">
+          <motion.div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr_auto_1fr] gap-8 items-start" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             {/* Step 1: Sign Up */}
-            <div className="flex flex-col items-center text-center">
+            <motion.div className="flex flex-col items-center text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }}>
               <p className="text-[#FFD700] text-7xl font-extrabold mb-4">1</p>
               <h3 className="text-3xl font-bold mb-4">Sign Up</h3>
               <p className="text-white/80 leading-relaxed">
@@ -228,7 +231,7 @@ const TutorLanding = () => {
                 profile. Highlight your skills, set your subjects and
                 availability, and let students discover you easily.
               </p>
-            </div>
+            </motion.div>
 
             {/* Arrow 1 */}
             <div className="hidden md:flex items-center justify-center h-full">
@@ -252,7 +255,7 @@ const TutorLanding = () => {
             </div>
 
             {/* Step 2: Teach Online */}
-            <div className="flex flex-col items-center text-center">
+            <motion.div className="flex flex-col items-center text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.05 }} viewport={{ once: true }}>
               <p className="text-[#46DC7D] text-7xl font-extrabold mb-4">2</p>
               <h3 className="text-3xl font-bold mb-4">Teach Online</h3>
               <p className="text-white/80 leading-relaxed">
@@ -260,7 +263,7 @@ const TutorLanding = () => {
                 assignments. Customize your lessons, track progress, and make
                 learning fun and effective from anywhere.
               </p>
-            </div>
+            </motion.div>
 
             {/* Arrow 2 */}
             <div className="hidden md:flex items-center justify-center h-full">
@@ -284,7 +287,7 @@ const TutorLanding = () => {
             </div>
 
             {/* Step 3: Get Paid */}
-            <div className="flex flex-col items-center text-center">
+            <motion.div className="flex flex-col items-center text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }}>
               <p className="text-[#46DC7D] text-7xl font-extrabold mb-4">3</p>
               <h3 className="text-3xl font-bold mb-4">Get Paid</h3>
               <p className="text-white/80 leading-relaxed">
@@ -292,8 +295,8 @@ const TutorLanding = () => {
                 paid promptly for every session you conduct, with full
                 transparency and easy tracking of your earnings.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
@@ -310,16 +313,16 @@ const TutorLanding = () => {
 
         <div className="relative z-10 max-w-7xl mx-auto px-6">
           {/* Header */}
-          <div className="text-center mb-16">
+          <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             <h2 className="text-5xl md:text-6xl font-bold mb-4">
               What Tutors Say
             </h2>
-          </div>
+          </motion.div>
 
           {/* Testimonial Cards Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
             {/* Testimonial Card 1 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true }} whileHover={{ y: -3 }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
                   <span className="text-gray-600 font-semibold">K</span>
@@ -344,10 +347,10 @@ const TutorLanding = () => {
               >
                 Read More
               </a>
-            </div>
+            </motion.div>
 
             {/* Testimonial Card 2 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }} viewport={{ once: true }} whileHover={{ y: -3 }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
                   <span className="text-gray-600 font-semibold">K</span>
@@ -372,10 +375,10 @@ const TutorLanding = () => {
               >
                 Read More
               </a>
-            </div>
+            </motion.div>
 
             {/* Testimonial Card 3 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }} viewport={{ once: true }} whileHover={{ y: -3 }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
                   <span className="text-gray-600 font-semibold">K</span>
@@ -400,10 +403,10 @@ const TutorLanding = () => {
               >
                 Read More
               </a>
-            </div>
+            </motion.div>
 
             {/* Testimonial Card 4 */}
-            <div className="bg-white rounded-xl p-6 shadow-lg">
+            <motion.div className="bg-white rounded-xl p-6 shadow-lg" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.15, ease: 'easeOut' }} viewport={{ once: true }} whileHover={{ y: -3 }}>
               <div className="flex items-center mb-4">
                 <div className="w-10 h-10 rounded-full bg-gray-300 mr-3 flex items-center justify-center">
                   <span className="text-gray-600 font-semibold">K</span>
@@ -428,8 +431,8 @@ const TutorLanding = () => {
               >
                 Read More
               </a>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 

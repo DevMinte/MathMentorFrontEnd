@@ -62,7 +62,7 @@ const Router = () => {
   return (
     <>
 
-      <AnimatePresence mode="wait">
+      <AnimatePresence mode="wait" onExitComplete={() => { try { window.scrollTo(0, 0); } catch {} }}>
         {currentPage === 'about' ? (
           <motion.div
             key="about"

@@ -1,4 +1,5 @@
 import React from 'react';
+import { motion } from 'framer-motion';
 import chair from "/images/studenthero.png";
 
 const StudentLanding = () => {
@@ -23,75 +24,99 @@ const StudentLanding = () => {
 
                 <div className="relative mx-auto w-full max-w-7xl px-6 pt-16 pb-28">
                     {/* Tagline */}
-                    <p className="text-center text-[#FFD700] tracking-[0.12em] mb-3 text-[16px] md:text-[18px] font-light">
+                    <motion.p
+                        className="text-center text-[#FFD700] tracking-[0.12em] mb-3 text-[16px] md:text-[18px] font-light"
+                        initial={{ opacity: 0, y: -10 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, ease: 'easeOut' }}
+                        viewport={{ once: true, amount: 0.6 }}
+                    >
                         Interactive lessons and practice designed for students.
-                    </p>
+                    </motion.p>
 
                     {/* Main Title */}
-                    <h1 className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6">
+                    <motion.h1
+                        className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6"
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8, ease: 'easeOut' }}
+                        viewport={{ once: true, amount: 0.5 }}
+                    >
                         Learn Math{" "}
                         <span className="bg-gradient-to-r from-[#F5E04A] to-[#46DC7D] bg-clip-text text-transparent">
                             Smarter
                         </span>
-                    </h1>
+                    </motion.h1>
 
                     {/* Main content layout */}
                     <div className="max-w-6xl mx-auto px-6">
-                        <div className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16">
+                        <motion.div
+                            className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16"
+                            initial="hidden"
+                            whileInView="show"
+                            transition={{ staggerChildren: 0.15 }}
+                            viewport={{ once: true, amount: 0.2 }}
+                        >
                             {/* Left Content Box */}
-                            <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 max-w-7xl mx-auto lg:mx-0 lg:mr-[-350px] z-10">
+                            <motion.div
+                                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 max-w-7xl mx-auto lg:mx-0 lg:mr-[-350px] z-10"
+                                variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
+                                transition={{ duration: 0.7, ease: 'easeOut' }}
+                                whileHover={{ scale: 1.01 }}
+                            >
                                 <p className="text-white/90 leading-relaxed text-left">
                                     Access thousands of lessons and guided practice exercises with expert tutors tailored to your grade and skill level.
                                 </p>
 
                                 <div className="mt-7 flex flex-col gap-3 max-w-[200px]">
-                                    <button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-6 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors">
+                                    <motion.button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-6 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors" whileTap={{ scale: 0.96 }} whileHover={{ x: 2 }}>
                                         <span>Start Learning →</span>
-
-                                    </button>
-                                    <button className="rounded-md border border-white/30 px-6 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm">
+                                    </motion.button>
+                                    <motion.button className="rounded-md border border-white/30 px-6 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm" whileTap={{ scale: 0.96 }}>
                                         Meet our Team
-                                    </button>
+                                    </motion.button>
                                 </div>
-                            </div>
+                            </motion.div>
 
                             {/* Chair - positioned to create overlap */}
-                            <div className="flex justify-center lg:ml-[-50px] z-20">
-                                <img
+                            <motion.div className="flex justify-center lg:ml-[-50px] z-20" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: 'easeOut' }}>
+                                <motion.img
                                     src={chair}
                                     alt="Chair with backpack and books"
                                     className="w-[605px] md:w-[786px] lg:w-[907px] object-contain drop-shadow-lg animate-float"
                                     style={{
                                         animation: 'float 6s ease-in-out infinite'
                                     }}
+                                    whileHover={{ rotate: 1.5 }}
+                                    transition={{ type: 'spring', stiffness: 120, damping: 12 }}
                                 />
-                            </div>
+                            </motion.div>
 
                             {/* Right Content Box */}
-                            <div className="max-w-md mx-auto lg:mx-0 lg:ml-[-300px] z-20">
-                                <div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 mb-6">
+                            <motion.div className="max-w-md mx-auto lg:mx-0 lg:ml-[-300px] z-20">
+                                <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 mb-6" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.05 }} whileHover={{ scale: 1.01 }}>
                                     <p className="text-white/90 leading-relaxed">
                                         Master core math concepts step by step with expert-designed study plans.
                                     </p>
-                                </div>
+                                </motion.div>
 
                                 {/* Stats */}
-                                <div className="grid grid-cols-2 gap-6 ml-8">
-                                    <div>
+                                <motion.div className="grid grid-cols-2 gap-6 ml-8">
+                                    <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
                                         <p className="text-[#FFD700] text-3xl font-bold mb-1">100+</p>
                                         <p className="text-white/80 text-sm">Interactive Challenges</p>
-                                    </div>
-                                    <div>
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} viewport={{ once: true }}>
                                         <p className="text-[#FFD700] text-3xl font-bold mb-1">1M+</p>
                                         <p className="text-white/80 text-sm">Practice Questions Solved</p>
-                                    </div>
-                                    <div>
+                                    </motion.div>
+                                    <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
                                         <p className="text-[#FFD700] text-3xl font-bold mb-1">5,000+</p>
                                         <p className="text-white/80 text-sm">Lessons & Exercises</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                                    </motion.div>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -100,19 +125,19 @@ const StudentLanding = () => {
             <section className="relative w-full py-20 bg-[#011810] text-white">
                 <div className="max-w-7xl mx-auto px-6">
                     {/* Header Section */}
-                    <div className="text-center mb-16">
+                    <motion.div className="text-center mb-16" initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
                         <h2 className="text-5xl md:text-6xl font-bold mb-6">
                             Math Made Better
                         </h2>
                         <p className="text-xl text-white/80 max-w-3xl mx-auto">
                             Enhance your learning with powerful tools and features:
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Feature Cards */}
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {/* Row 1 (3 cards) */}
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+                        <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
                             <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                                 <img src="/images/1.png" alt="Quizzes" className="w-10 h-10 object-contain" />
                             </div>
@@ -120,9 +145,9 @@ const StudentLanding = () => {
                             <p className="text-white/80 leading-relaxed text-center mt-5">
                                 Sharpen your skills with curated tests and instant results.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+                        <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
                             <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                                 <img src="/images/Video.png" alt="Video Lessons" className="w-10 h-10 object-contain" />
                             </div>
@@ -130,9 +155,9 @@ const StudentLanding = () => {
                             <p className="text-white/80 leading-relaxed text-center mt-5">
                                 Learn from detailed, step-by-step tutorials.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+                        <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
                             <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                                 <img src="/images/Progress.png" alt="Progress Tracking" className="w-10 h-10 object-contain" />
                             </div>
@@ -140,12 +165,12 @@ const StudentLanding = () => {
                             <p className="text-white/80 leading-relaxed text-center mt-5">
                                 See your improvement over time with analytics.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
 
                     {/* Row 2 (centered 2 cards) */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8 max-w-4xl mx-auto">
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+                        <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, ease: 'easeOut' }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
                             <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                                 <img src="/images/247access.png" alt="24/7 Access" className="w-10 h-10 object-contain" />
                             </div>
@@ -153,9 +178,9 @@ const StudentLanding = () => {
                             <p className="text-white/80 leading-relaxed text-center mt-5">
                                 Study anytime, from any device, anywhere in the world.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15">
+                        <motion.div className="bg-white/10 backdrop-blur-md rounded-xl border border-white/20 p-8 shadow-lg hover:shadow-xl transition-all duration-300 hover:border-white/30 hover:bg-white/15" initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.05, ease: 'easeOut' }} viewport={{ once: true, amount: 0.3 }} whileHover={{ y: -4 }}>
                             <div className="w-16 h-16 flex items-center justify-center mb-6 mx-auto">
                                 <img src="/images/Community.png" alt="Community Support" className="w-10 h-10 object-contain" />
                             </div>
@@ -163,7 +188,7 @@ const StudentLanding = () => {
                             <p className="text-white/80 leading-relaxed text-center mt-5">
                                 Connect with other learners for useful tips and helpful guidance.
                             </p>
-                        </div>
+                        </motion.div>
                     </div>
                 </div>
             </section>
@@ -190,19 +215,19 @@ const StudentLanding = () => {
 
                 <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
                     {/* Header Section */}
-                    <div className="text-center mb-6">
+                    <motion.div className="text-center mb-6" initial={{ opacity: 0, y: 12 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-2 mt-4 md:mt-8">
                             Plans That Work for You
                         </h2>
                         <p className="text-base md:text-lg lg:text-xl text-white/80 max-w-2xl mx-auto px-4">
                             No hidden fees, just clear and simple learning options.
                         </p>
-                    </div>
+                    </motion.div>
 
                     {/* Main Content Layout */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto">
+                    <motion.div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8 max-w-6xl mx-auto" initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ duration: 0.7 }} viewport={{ once: true }}>
                         {/* Free Plan Card */}
-                        <div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center">
+                        <motion.div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6 }} viewport={{ once: true }} whileHover={{ y: -3 }}>
                             <h3 className="text-2xl font-bold text-white mb-2">Free Plan</h3>
                             <p className="text-[#00FF11] text-sm mb-4">Perfect for getting started</p>
                             <div className="mb-6">
@@ -243,10 +268,10 @@ const StudentLanding = () => {
                                 Get Started Free
                             </button>
                             <p className="text-center text-white/50 text-xs">No credit card required</p>
-                        </div>
+                        </motion.div>
 
                         {/* Silver Plan Card */}
-                        <div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg text-center">
+                        <motion.div className="bg-white/5 backdrop-blur-md rounded-xl border border-white/20 p-6 shadow-lg text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.05 }} viewport={{ once: true }} whileHover={{ y: -3 }}>
                             <h3 className="text-2xl font-bold text-white mb-2">Silver Plan</h3>
                             <p className="text-[#00FF11] text-sm mb-4">Perfect for getting started</p>
                             <div className="mb-6">
@@ -287,10 +312,10 @@ const StudentLanding = () => {
                                 Get Started Free
                             </button>
                             <p className="text-center text-white/50 text-xs">No credit card required</p>
-                        </div>
+                        </motion.div>
 
                         {/* Gold Plan Card */}
-                        <div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center">
+                        <motion.div className="bg-[#002317] rounded-xl border border-white/20 p-6 shadow-lg text-center" initial={{ y: 16, opacity: 0 }} whileInView={{ y: 0, opacity: 1 }} transition={{ duration: 0.6, delay: 0.1 }} viewport={{ once: true }} whileHover={{ y: -3 }}>
                             <h3 className="text-2xl font-bold text-white mb-2">Gold Plan</h3>
                             <p className="text-[#00FF11] text-sm mb-4">Perfect for getting started</p>
                             <div className="mb-6">
@@ -331,8 +356,8 @@ const StudentLanding = () => {
                                 Get Started Free
                             </button>
                             <p className="text-center text-white/50 text-xs">No credit card required</p>
-                        </div>
-                    </div>
+                        </motion.div>
+                    </motion.div>
                 </div>
             </section>
 
