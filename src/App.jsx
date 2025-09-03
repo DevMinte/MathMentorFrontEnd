@@ -15,6 +15,13 @@ function App() {
   });
 
   useEffect(() => {
+    const previousScrollRestoration = window.history.scrollRestoration;
+    try { window.history.scrollRestoration = 'manual'; } catch {}
+
+    // Prevent duplicate initialization and keep stable refs
+    const lenisRef = { current: null };
+    const frameRef = { current: 0 };
+
     const lenis = new Lenis({
       duration: 1.2,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
@@ -24,16 +31,77 @@ function App() {
       smoothTouch: false,
       touchMultiplier: 2,
     });
+    lenisRef.current = lenis;
+
+    // Ensure we start at the top when (re)entering the home page
+    try {
+      window.scrollTo({ top: 0, behavior: 'auto' });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    } catch {}
 
     function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
+      if (!lenisRef.current) return;
+      lenisRef.current.raf(time);
+      frameRef.current = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    // Start RAF loop once
+    if (!frameRef.current) {
+      frameRef.current = requestAnimationFrame(raf);
+    }
+
+    // Pause/resume on tab visibility changes to prevent stale frames
+    const handleVisibility = () => {
+      if (!lenisRef.current) return;
+      if (document.hidden) {
+        try { lenisRef.current.stop(); } catch {}
+      } else {
+        try { lenisRef.current.start(); } catch {}
+      }
+    };
+    document.addEventListener('visibilitychange', handleVisibility, { passive: true });
+
+    // Defensive: stop RAF on pagehide/unload
+    const stopRaf = () => {
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+        frameRef.current = 0;
+      }
+    };
+    window.addEventListener('pagehide', stopRaf, { passive: true });
+    window.addEventListener('beforeunload', stopRaf, { passive: true });
 
     return () => {
-      lenis.destroy();
+      // Stop RAF first
+      if (frameRef.current) {
+        cancelAnimationFrame(frameRef.current);
+        frameRef.current = 0;
+      }
+      // Destroy lenis
+      try { lenisRef.current && lenisRef.current.destroy(); } catch {}
+      lenisRef.current = null;
+      // Extra hard cleanup in case Lenis leaves artifacts on the DOM
+      try {
+        const htmlEl = document.documentElement;
+        const bodyEl = document.body;
+        htmlEl.classList.remove('lenis', 'lenis-smooth', 'lenis-stopped', 'lenis-scrolling');
+        bodyEl.classList.remove('lenis', 'lenis-smooth', 'lenis-stopped', 'lenis-scrolling');
+        htmlEl.style.scrollBehavior = '';
+        bodyEl.style.scrollBehavior = '';
+        bodyEl.style.overflow = '';
+        htmlEl.style.overflow = '';
+        htmlEl.style.removeProperty('--lenis-direction');
+        htmlEl.style.removeProperty('--lenis-speed');
+        htmlEl.style.removeProperty('--lenis-duration');
+        htmlEl.style.removeProperty('--lenis-ease');
+      } catch {}
+
+      document.removeEventListener('visibilitychange', handleVisibility);
+      window.removeEventListener('pagehide', stopRaf);
+      window.removeEventListener('beforeunload', stopRaf);
+
+      try { window.history.scrollRestoration = previousScrollRestoration || 'auto'; } catch {}
     };
   }, []);
 
@@ -199,60 +267,10 @@ const SecondSection = ({ scrollYProgress, onAboutClick }) => {
           {/* About */}
         </motion.div>
         
-        <motion.div
-          className="text-9xl font-bold mb-8 tracking-wider relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {Array.from("ABOUT").map((letter, index) => (
-            <motion.span
-              key={index}
-              className="inline-block relative"
-              style={{
-                fontFamily: letter === 'A' ? 'BerkshireSwash, cursive' : 'inherit',
-                fontSize: letter === 'A' ? '1.2em' : '1em',
-                fontWeight: letter === 'A' ? '900' : 'bold'
-              }}
-              initial={{ 
-                opacity: 0, 
-                y: 100,
-                rotateX: -90,
-                scale: 0.5
-              }}
-              whileInView={{ 
-                opacity: 1, 
-                y: 0,
-                rotateX: 0,
-                scale: 1
-              }}
-              transition={{
-                duration: 1,
-                delay: index * 0.08,
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{
-                scale: 1.2,
-                y: -10,
-                rotateY: 10,
-                transition: { duration: 0.3 }
-              }}
-            >
-              {letter === " " ? "\u00A0" : letter}
-              {/* Glow effect for each letter */}
-              {/* <motion.div
-                className="absolute inset-0 bg-yellow-400/20 blur-sm rounded-lg"
-                initial={{ opacity: 0 }}
-                whileInView={{ 
-                  opacity: 1,
-                  transition: { delay: index * 0.08 + 0.5 }
-                }}
-              /> */}
-            </motion.span>
-          ))}
-        </motion.div>
+        <div className="text-9xl font-bold mb-8 tracking-wider relative">
+          <span className="inline-block relative" style={{ fontFamily: 'BerkshireSwash, cursive', fontSize: '1.2em', fontWeight: '900' }}>A</span>
+          <span className="inline-block relative">BOUT</span>
+        </div>
         
         <motion.p 
           className="text-3xl font-light tracking-wide relative"
@@ -371,51 +389,10 @@ const ThirdSection = ({ scrollYProgress, onStudentClick }) => {
           {/* Student */}
         </motion.div>
         
-        <motion.div
-          className="text-9xl font-bold mb-8 tracking-wider relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {Array.from("STUDENT").map((letter, index) => (
-            <motion.span
-              key={index}
-              className="inline-block relative"
-              style={{
-                fontFamily: letter === 'S' ? 'BerkshireSwash, cursive' : 'inherit',
-                fontSize: letter === 'S' ? '1.2em' : '1em',
-                fontWeight: letter === 'S' ? '900' : 'bold'
-              }}
-              initial={{ 
-                opacity: 0, 
-                y: 100,
-                rotateX: -90,
-                scale: 0.5
-              }}
-              whileInView={{ 
-                opacity: 1, 
-                y: 0,
-                rotateX: 0,
-                scale: 1
-              }}
-              transition={{
-                duration: 1,
-                delay: index * 0.08,
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{
-                scale: 1.2,
-                y: -10,
-                rotateY: 10,
-                transition: { duration: 0.3 }
-              }}
-            >
-              {letter === " " ? "\u00A0" : letter}
-            </motion.span>
-          ))}
-        </motion.div>
+        <div className="text-9xl font-bold mb-8 tracking-wider relative">
+          <span className="inline-block relative" style={{ fontFamily: 'BerkshireSwash, cursive', fontSize: '1.2em', fontWeight: '900' }}>S</span>
+          <span className="inline-block relative">TUDENT</span>
+        </div>
         
         <motion.p 
           className="text-3xl font-light tracking-wide relative"
@@ -519,51 +496,10 @@ const FourthSection = ({ scrollYProgress, onTutorClick }) => {
           {/* Tutor */}
         </motion.div>
         
-        <motion.div
-          className="text-9xl font-bold mb-8 tracking-wider relative"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
-        >
-          {Array.from("TUTOR").map((letter, index) => (
-            <motion.span
-              key={index}
-              className="inline-block relative"
-              style={{
-                fontFamily: letter === 'T' ? 'BerkshireSwash, cursive' : 'inherit',
-                fontSize: letter === 'T' ? '1.2em' : '1em',
-                fontWeight: letter === 'T' ? '900' : 'bold'
-              }}
-              initial={{ 
-                opacity: 0, 
-                y: 100,
-                rotateX: -90,
-                scale: 0.5
-              }}
-              whileInView={{ 
-                opacity: 1, 
-                y: 0,
-                rotateX: 0,
-                scale: 1
-              }}
-              transition={{
-                duration: 1,
-                delay: index * 0.08,
-                ease: "easeOut",
-                type: "spring",
-                stiffness: 200
-              }}
-              whileHover={{
-                scale: 1.2,
-                y: -10,
-                rotateY: 10,
-                transition: { duration: 0.3 }
-              }}
-            >
-              {letter === " " ? "\u00A0" : letter}
-            </motion.span>
-          ))}
-        </motion.div>
+        <div className="text-9xl font-bold mb-8 tracking-wider relative">
+          <span className="inline-block relative" style={{ fontFamily: 'BerkshireSwash, cursive', fontSize: '1.2em', fontWeight: '900' }}>T</span>
+          <span className="inline-block relative">UTOR</span>
+        </div>
         
         <motion.p 
           className="text-3xl font-light tracking-wide relative"
