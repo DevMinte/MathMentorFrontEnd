@@ -37,7 +37,7 @@ const Header = () => {
           transition={{ delay: 0.3, duration: 0.6 }}
         >
           <motion.a 
-            href="#home" 
+            href="#/" 
             className="text-white/80 hover:text-white transition-colors duration-300 relative group"
             whileHover={{ y: -2 }}
           >
@@ -45,15 +45,7 @@ const Header = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
           </motion.a>
           <motion.a 
-            href="#courses" 
-            className="text-white/80 hover:text-white transition-colors duration-300 relative group"
-            whileHover={{ y: -2 }}
-          >
-            Courses
-            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
-          </motion.a>
-          <motion.a 
-            href="#about" 
+            href="#/about" 
             className="text-white/80 hover:text-white transition-colors duration-300 relative group"
             whileHover={{ y: -2 }}
           >
@@ -61,11 +53,19 @@ const Header = () => {
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
           </motion.a>
           <motion.a 
-            href="#contact" 
+            href="#/student" 
             className="text-white/80 hover:text-white transition-colors duration-300 relative group"
             whileHover={{ y: -2 }}
           >
-            Contact
+            Student
+            <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
+          </motion.a>
+          <motion.a 
+            href="#/tutor" 
+            className="text-white/80 hover:text-white transition-colors duration-300 relative group"
+            whileHover={{ y: -2 }}
+          >
+            Tutor
             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-yellow-400 transition-all duration-300 group-hover:w-full"></span>
           </motion.a>
         </motion.nav>
