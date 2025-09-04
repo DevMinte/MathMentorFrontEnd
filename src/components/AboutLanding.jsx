@@ -36,7 +36,7 @@ const AboutLanding = () => {
 
           {/* Main Title */}
           <motion.h1
-            className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-12"
+            className="text-center text-[34px] sm:text-[42px] md:text-[58px] lg:text-[72px] font-extrabold leading-tight mb-8 md:mb-12 px-2"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
@@ -51,7 +51,7 @@ const AboutLanding = () => {
           {/* Main content layout */}
           <div className="max-w-6xl mx-auto px-6">
             <motion.div
-              className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16"
+              className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-6 md:gap-10 lg:gap-16"
               initial="hidden"
               whileInView="show"
               transition={{ staggerChildren: 0.15 }}
@@ -59,19 +59,19 @@ const AboutLanding = () => {
             >
               {/* Left Content Box */}
               <motion.div
-                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 max-w-2xl mx-auto lg:mx-0 lg:mr-[-150px] z-10"
+                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-5 md:p-8 max-w-2xl mx-auto lg:mx-0 lg:mr-[-80px] z-10"
                 variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
                 transition={{ duration: 0.7, ease: "easeOut" }}
                 whileHover={{ scale: 1.01 }}
               >
-                <p className="text-white/90 leading-relaxed text-left">
+                <p className="text-white/90 leading-relaxed text-left text-sm md:text-base">
                   Empowering students to master mathematics through personalized
                   learning experiences and expert guidance
                 </p>
 
-                <div className="mt-7 flex flex-col gap-3 max-w-[200px]">
+                <div className="mt-6 md:mt-7 flex flex-col gap-3 max-w-[220px] w-full">
                   <motion.button
-                    className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-6 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors"
+                    className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-5 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors"
                     whileTap={{ scale: 0.96 }}
                     whileHover={{ x: 2 }}
                   >
@@ -79,7 +79,7 @@ const AboutLanding = () => {
 
                   </motion.button>
                   <motion.button
-                    className="rounded-md border border-white/30 px-6 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm"
+                    className="rounded-md border border-white/30 px-5 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm"
                     whileTap={{ scale: 0.96 }}
                   >
                     Meet our Team
@@ -89,14 +89,14 @@ const AboutLanding = () => {
 
               {/* Chair - positioned to create overlap */}
               <motion.div
-                className="flex justify-center lg:ml-12 z-20"
+                className="flex justify-center lg:ml-6 z-20"
                 variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }}
                 transition={{ duration: 0.8, ease: "easeOut" }}
               >
                 <motion.img
                   src={chair}
                   alt="Chair with backpack and books"
-                  className="w-[400px] md:w-[520px] lg:w-[600px] object-contain drop-shadow-lg animate-float"
+                  className="w-[300px] sm:w-[380px] md:w-[480px] lg:w-[560px] object-contain drop-shadow-lg animate-float"
                   style={{
                     animation: 'float 6s ease-in-out infinite'
                   }}
@@ -106,32 +106,32 @@ const AboutLanding = () => {
               </motion.div>
 
               {/* Right Content Box */}
-              <motion.div className="max-w-sm mx-auto lg:mx-0 lg:ml-[-250px] z-20">
+              <motion.div className="max-w-sm mx-auto lg:mx-0 lg:ml-[-160px] z-20">
                 <motion.div
-                  className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 mb-6"
+                  className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-6 md:p-8 mb-6"
                   variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
                   transition={{ duration: 0.7, ease: "easeOut", delay: 0.05 }}
                   whileHover={{ scale: 1.01 }}
                 >
-                  <p className="text-white/90 leading-relaxed">
+                  <p className="text-white/90 leading-relaxed text-sm md:text-base">
                     Empowering students to master mathematics through personalized
                     learning experiences
                   </p>
                 </motion.div>
 
                 {/* Stats */}
-                <motion.div className="grid grid-cols-2 gap-6 ml-8">
+                <motion.div className="grid grid-cols-2 gap-6 ml-2 sm:ml-6">
                   <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-1">98%</p>
-                    <p className="text-white/80 text-sm">Success Rate</p>
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">98%</p>
+                    <p className="text-white/80 text-xs md:text-sm">Success Rate</p>
                   </motion.div>
                   <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-1">10K+</p>
-                    <p className="text-white/80 text-sm">Student</p>
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">10K+</p>
+                    <p className="text-white/80 text-xs md:text-sm">Student</p>
                   </motion.div>
                   <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-1">50+</p>
-                    <p className="text-white/80 text-sm">Experts</p>
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">50+</p>
+                    <p className="text-white/80 text-xs md:text-sm">Experts</p>
                   </motion.div>
                 </motion.div>
               </motion.div>
@@ -428,7 +428,7 @@ const AboutLanding = () => {
 
       {/* Footer Section */}
       <footer className="bg-[#010f0a] text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start gap-6 sm:gap-10 md:gap-12">
           {/* Logo and Tagline */}
           <div className="space-y-3 -mt-4 text-center md:text-left">
             <img
@@ -436,21 +436,21 @@ const AboutLanding = () => {
               alt="MathMentor Logo"
               className="h-20 md:h-28 w-auto object-contain mx-auto md:mx-0"
             />
-            <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
+            <p className="text-white/60 text-base sm:text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
               Empowering students <br /> to master mathematics
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4 text-center md:text-left">
-            <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Home</a>
-            <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Services</a>
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
+            <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Home</a>
+            <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Services</a>
             <a href="#" className="block text-white/90 text-base md:text-lg hover:text-yellow-400">About Us</a>
-            <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Blog</a>
+            <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Blog</a>
           </div>
 
           {/* Social and Contact */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
             <h4 className="text-lg md:text-xl font-medium">Follow us</h4>
             <div className="flex space-x-6 justify-center md:justify-start">
               <a href="#" aria-label="Facebook">
@@ -463,15 +463,15 @@ const AboutLanding = () => {
                 <img src="/icon/x.svg" alt="X" className="w-6 h-6 md:w-7 md:h-7" />
               </a>
             </div>
-            <p className="text-white/80 text-lg md:text-xl">hello@mathmentor.com</p>
+            <p className="text-white/80 text-base sm:text-lg md:text-xl break-words">hello@mathmentor.com</p>
           </div>
         </div>
 
         {/* Separator */}
-        <div className="border-t border-gray-700 mx-8 md:mx-24"></div>
+        <div className="border-t border-gray-700 mx-4 sm:mx-8 md:mx-24"></div>
 
         {/* Bottom Bar */}
-        <div className="text-center py-4 md:py-6 text-white/80 text-xs md:text-sm px-4">
+        <div className="text-center py-4 md:py-6 text-white/80 text-xs sm:text-sm px-4">
           © 2025 Mathmentor. All rights reserved.{" "}
           <a href="#" className="hover:text-yellow-400">Privacy Policy</a>
           <span className="text-orange-500"> | </span>

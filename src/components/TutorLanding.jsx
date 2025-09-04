@@ -27,17 +27,17 @@ const TutorLanding = () => {
           </motion.p>
 
           {/* Main Title */}
-          <motion.h1 className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true, amount: 0.5 }}>
+          <motion.h1 className="text-center text-[34px] sm:text-[42px] md:text-[58px] lg:text-[72px] font-extrabold leading-tight mb-6 px-2" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.8, ease: "easeOut" }} viewport={{ once: true, amount: 0.5 }}>
             <span className="bg-gradient-to-r from-[#F5E04A] via-[#46DC7D] to-[#46DC7D] bg-clip-text text-transparent">
               Teach. Inspire. Earn
             </span>
           </motion.h1>
 
           {/* Main content layout */}
-          <div className="max-w-6xl mx-auto px-6 lg:-mt-20">
-            <motion.div className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16" initial="hidden" whileInView="show" transition={{ staggerChildren: 0.15 }} viewport={{ once: true, amount: 0.2 }}>
+          <div className="max-w-6xl mx-auto px-6 lg:-mt-12">
+            <motion.div className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-6 md:gap-10 lg:gap-16" initial="hidden" whileInView="show" transition={{ staggerChildren: 0.15 }} viewport={{ once: true, amount: 0.2 }}>
               {/* Left Content Box - Call to Action */}
-              <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-6 md:p-7 max-w-sm mx-auto lg:mx-0 lg:mr-[-100000px] lg:mt-56 z-20 lg:ml-[50px]" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: "easeOut" }} whileHover={{ scale: 1.01 }}>
+              <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-5 md:p-7 max-w-sm mx-auto lg:mx-0 lg:mr-[-120px] lg:mt-40 z-20 lg:ml-[20px]" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: "easeOut" }} whileHover={{ scale: 1.01 }}>
                 <p className="text-white/90 leading-relaxed text-left mb-6">
                   Empower students with your knowledge while building your
                   tutoring career online.
@@ -54,11 +54,11 @@ const TutorLanding = () => {
               </motion.div>
 
               {/* Central 3D Tutor Illustration */}
-              <motion.div className="flex justify-center lg:ml-[-50px] z-10" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: "easeOut" }}>
+              <motion.div className="flex justify-center lg:ml-[-30px] z-10" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: "easeOut" }}>
                 <motion.img
                   src={tutorImage}
                   alt="3D Tutor Character"
-                  className="w-[400px] md:w-[500px] lg:w-[600px] object-contain drop-shadow-lg animate-float"
+                  className="w-[300px] sm:w-[420px] md:w-[520px] lg:w-[600px] object-contain drop-shadow-lg animate-float"
                   style={{
                     animation: "float 6s ease-in-out infinite",
                   }}
@@ -69,28 +69,28 @@ const TutorLanding = () => {
 
               {/* Right Content Box - Statistics */}
               <motion.div className="max-w-md mx-auto lg:mx-0 lg:ml-[-100px] z-20">
-                <motion.div className="grid grid-cols-2 gap-12">
+                <motion.div className="grid grid-cols-2 gap-8 md:gap-12">
                   {/* First Row - 2 statistics */}
                   <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-2">
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-2">
                       5,000+
                     </p>
-                    <p className="text-white/80 text-base">Number of reviews</p>
+                    <p className="text-white/80 text-xs md:text-base">Number of reviews</p>
                   </motion.div>
                   <motion.div className="text-center lg:text-left" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-2">
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-2">
                       1M+
                     </p>
-                    <p className="text-white/80 text-base">
+                    <p className="text-white/80 text-xs md:text-base">
                       Student booking trend
                     </p>
                   </motion.div>
                   {/* Second Row - 1 statistic (spans 2 columns) */}
                   <motion.div className="text-center lg:text-left col-span-2" initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-                    <p className="text-[#FFD700] text-3xl font-bold mb-2">
+                    <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-2">
                       100+
                     </p>
-                    <p className="text-white/80 text-base">
+                    <p className="text-white/80 text-xs md:text-base">
                       Number of sessions booked
                     </p>
                   </motion.div>
@@ -438,7 +438,7 @@ const TutorLanding = () => {
 
       {/* Footer Section */}
       <footer className="bg-[#010f0a] text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start gap-6 sm:gap-10 md:gap-12">
           {/* Logo and Tagline */}
           <div className="space-y-3 -mt-4 text-center md:text-left">
             <img
@@ -446,22 +446,22 @@ const TutorLanding = () => {
               alt="MathMentor Logo"
               className="h-20 md:h-28 w-auto object-contain mx-auto md:mx-0"
             />
-            <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
+            <p className="text-white/60 text-base sm:text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
               Empowering tutors <br /> to inspire students
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Home
             </a>
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Tutoring
             </a>
@@ -473,14 +473,14 @@ const TutorLanding = () => {
             </a>
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Support
             </a>
           </div>
 
           {/* Social and Contact */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
             <h4 className="text-lg md:text-xl font-medium">Follow us</h4>
             <div className="flex space-x-6 justify-center md:justify-start">
               <a href="#" aria-label="Facebook">
@@ -505,17 +505,17 @@ const TutorLanding = () => {
                 />
               </a>
             </div>
-            <p className="text-white/80 text-lg md:text-xl">
+            <p className="text-white/80 text-base sm:text-lg md:text-xl break-words">
               tutors@mathmentor.com
             </p>
           </div>
         </div>
 
         {/* Separator */}
-        <div className="border-t border-gray-700 mx-8 md:mx-24"></div>
+        <div className="border-t border-gray-700 mx-4 sm:mx-8 md:mx-24"></div>
 
         {/* Bottom Bar */}
-        <div className="text-center py-4 md:py-6 text-white/80 text-xs md:text-sm px-4">
+        <div className="text-center py-4 md:py-6 text-white/80 text-xs sm:text-sm px-4">
           © 2025 Mathmentor. All rights reserved.{" "}
           <a href="#" className="hover:text-yellow-400">
             Privacy Policy
