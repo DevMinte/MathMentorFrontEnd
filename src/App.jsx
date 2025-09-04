@@ -322,7 +322,7 @@ const SecondSection = ({ scrollYProgress, onAboutClick }) => {
       <motion.div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/01.jpg')",
+          backgroundImage: "url('/images/aboutpage.jpg')",
         }}
         initial={{ scale: 1.2, opacity: 0 }}
         whileInView={{
@@ -471,7 +471,7 @@ const ThirdSection = ({ scrollYProgress, onStudentClick }) => {
       <motion.div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/backgrund2.jpg')",
+          backgroundImage: "url('/images/studentpage.jpg')",
         }}
         initial={{ scale: 1.2, opacity: 0 }}
         whileInView={{
@@ -590,7 +590,7 @@ const FourthSection = ({ scrollYProgress, onTutorClick }) => {
       <motion.div
         className="absolute inset-0 w-full h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('/images/backgrund2.jpg')",
+          backgroundImage: "url('/images/Tutor.jpg')",
         }}
         initial={{ scale: 1.2, opacity: 0 }}
         whileInView={{
