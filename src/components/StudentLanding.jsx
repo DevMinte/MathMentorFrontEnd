@@ -36,7 +36,7 @@ const StudentLanding = () => {
 
                     {/* Main Title */}
                     <motion.h1
-                        className="text-center text-[48px] md:text-[68px] lg:text-[80px] font-extrabold leading-tight mb-6"
+                        className="text-center text-[34px] sm:text-[42px] md:text-[58px] lg:text-[72px] font-extrabold leading-tight mb-6 px-2"
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8, ease: 'easeOut' }}
@@ -51,7 +51,7 @@ const StudentLanding = () => {
                     {/* Main content layout */}
                     <div className="max-w-6xl mx-auto px-6">
                         <motion.div
-                            className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-10 lg:gap-16"
+                            className="grid grid-cols-1 lg:grid-cols-[2fr_auto_1fr] items-center gap-6 md:gap-10 lg:gap-16"
                             initial="hidden"
                             whileInView="show"
                             transition={{ staggerChildren: 0.15 }}
@@ -59,31 +59,31 @@ const StudentLanding = () => {
                         >
                             {/* Left Content Box */}
                             <motion.div
-                                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 max-w-7xl mx-auto lg:mx-0 lg:mr-[-350px] z-10"
+                                className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-5 md:p-8 max-w-3xl mx-auto lg:mx-0 lg:mr-[-120px] z-10"
                                 variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }}
                                 transition={{ duration: 0.7, ease: 'easeOut' }}
                                 whileHover={{ scale: 1.01 }}
                             >
-                                <p className="text-white/90 leading-relaxed text-left">
+                                <p className="text-white/90 leading-relaxed text-left text-sm md:text-base">
                                     Access thousands of lessons and guided practice exercises with expert tutors tailored to your grade and skill level.
                                 </p>
 
-                                <div className="mt-7 flex flex-col gap-3 max-w-[200px]">
-                                    <motion.button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-6 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors" whileTap={{ scale: 0.96 }} whileHover={{ x: 2 }}>
+                                <div className="mt-6 md:mt-7 flex flex-col gap-3 max-w-[220px] w-full">
+                                    <motion.button className="inline-flex items-center justify-between gap-3 rounded-md bg-[#FFD700] px-5 py-3 font-semibold text-black hover:bg-[#E6C200] transition-colors" whileTap={{ scale: 0.96 }} whileHover={{ x: 2 }}>
                                         <span>Start Learning →</span>
                                     </motion.button>
-                                    <motion.button className="rounded-md border border-white/30 px-6 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm" whileTap={{ scale: 0.96 }}>
+                                    <motion.button className="rounded-md border border-white/30 px-5 py-3 text-white hover:bg-white/15 transition-colors backdrop-blur-sm" whileTap={{ scale: 0.96 }}>
                                         Meet our Team
                                     </motion.button>
                                 </div>
                             </motion.div>
 
                             {/* Chair - positioned to create overlap */}
-                            <motion.div className="flex justify-center lg:ml-[-50px] z-20" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: 'easeOut' }}>
+                            <motion.div className="flex justify-center lg:ml-[-30px] z-20" variants={{ hidden: { opacity: 0, scale: 0.95 }, show: { opacity: 1, scale: 1 } }} transition={{ duration: 0.8, ease: 'easeOut' }}>
                                 <motion.img
                                     src={chair}
                                     alt="Chair with backpack and books"
-                                    className="w-[605px] md:w-[786px] lg:w-[907px] object-contain drop-shadow-lg animate-float"
+                                    className="w-[320px] sm:w-[480px] md:w-[640px] lg:w-[780px] object-contain drop-shadow-lg animate-float"
                                     style={{
                                         animation: 'float 6s ease-in-out infinite'
                                     }}
@@ -93,26 +93,26 @@ const StudentLanding = () => {
                             </motion.div>
 
                             {/* Right Content Box */}
-                            <motion.div className="max-w-md mx-auto lg:mx-0 lg:ml-[-300px] z-20">
-                                <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-7 md:p-8 mb-6" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.05 }} whileHover={{ scale: 1.01 }}>
-                                    <p className="text-white/90 leading-relaxed">
+                            <motion.div className="max-w-md mx-auto lg:mx-0 lg:ml-[-140px] z-20">
+                                <motion.div className="rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-2xl p-6 md:p-8 mb-6" variants={{ hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0 } }} transition={{ duration: 0.7, ease: 'easeOut', delay: 0.05 }} whileHover={{ scale: 1.01 }}>
+                                    <p className="text-white/90 leading-relaxed text-sm md:text-base">
                                         Master core math concepts step by step with expert-designed study plans.
                                     </p>
                                 </motion.div>
 
                                 {/* Stats */}
-                                <motion.div className="grid grid-cols-2 gap-6 ml-8">
+                                <motion.div className="grid grid-cols-2 gap-6 ml-2 sm:ml-6">
                                     <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }} viewport={{ once: true }}>
-                                        <p className="text-[#FFD700] text-3xl font-bold mb-1">100+</p>
-                                        <p className="text-white/80 text-sm">Interactive Challenges</p>
+                                        <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">100+</p>
+                                        <p className="text-white/80 text-xs md:text-sm">Interactive Challenges</p>
                                     </motion.div>
                                     <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.05 }} viewport={{ once: true }}>
-                                        <p className="text-[#FFD700] text-3xl font-bold mb-1">1M+</p>
-                                        <p className="text-white/80 text-sm">Practice Questions Solved</p>
+                                        <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">1M+</p>
+                                        <p className="text-white/80 text-xs md:text-sm">Practice Questions Solved</p>
                                     </motion.div>
                                     <motion.div initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.1 }} viewport={{ once: true }}>
-                                        <p className="text-[#FFD700] text-3xl font-bold mb-1">5,000+</p>
-                                        <p className="text-white/80 text-sm">Lessons & Exercises</p>
+                                        <p className="text-[#FFD700] text-2xl md:text-3xl font-bold mb-1">5,000+</p>
+                                        <p className="text-white/80 text-xs md:text-sm">Lessons & Exercises</p>
                                     </motion.div>
                                 </motion.div>
                             </motion.div>
@@ -363,7 +363,7 @@ const StudentLanding = () => {
 
             {/* Footer Section */}
             <footer className="bg-[#010f0a] text-white">
-                <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start gap-6 sm:gap-10 md:gap-12">
                     {/* Logo and Tagline */}
                     <div className="space-y-3 -mt-4 text-center md:text-left">
                         <img
@@ -371,21 +371,21 @@ const StudentLanding = () => {
                             alt="MathMentor Logo"
                             className="h-20 md:h-28 w-auto object-contain mx-auto md:mx-0"
                         />
-                        <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
+                        <p className="text-white/60 text-base sm:text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
                             Empowering students <br /> to master mathematics
                         </p>
                     </div>
 
                     {/* Navigation */}
-                    <div className="space-y-4 text-center md:text-left">
-                        <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Home</a>
-                        <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Services</a>
+                    <div className="space-y-3 sm:space-y-4 text-center md:text-left">
+                        <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Home</a>
+                        <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Services</a>
                         <a href="#" className="block text-white/90 text-base md:text-lg hover:text-yellow-400">About Us</a>
-                        <a href="#" className="block text-white/90 text-lg md:text-xl hover:text-yellow-400">Blog</a>
+                        <a href="#" className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400">Blog</a>
                     </div>
 
                     {/* Social and Contact */}
-                    <div className="space-y-4 text-center md:text-left">
+                    <div className="space-y-3 sm:space-y-4 text-center md:text-left">
                         <h4 className="text-lg md:text-xl font-medium">Follow us</h4>
                         <div className="flex space-x-6 justify-center md:justify-start">
                             <a href="#" aria-label="Facebook">
@@ -398,15 +398,15 @@ const StudentLanding = () => {
                                 <img src="/icon/x.svg" alt="X" className="w-6 h-6 md:w-7 md:h-7" />
                             </a>
                         </div>
-                        <p className="text-white/80 text-lg md:text-xl">hello@mathmentor.com</p>
+                        <p className="text-white/80 text-base sm:text-lg md:text-xl break-words">hello@mathmentor.com</p>
                     </div>
                 </div>
 
                 {/* Separator */}
-                <div className="border-t border-gray-700 mx-8 md:mx-24"></div>
+                <div className="border-t border-gray-700 mx-4 sm:mx-8 md:mx-24"></div>
 
                 {/* Bottom Bar */}
-                <div className="text-center py-4 md:py-6 text-white/80 text-xs md:text-sm px-4">
+                <div className="text-center py-4 md:py-6 text-white/80 text-xs sm:text-sm px-4">
                     © 2025 Mathmentor. All rights reserved.{" "}
                     <a href="#" className="hover:text-yellow-400">Privacy Policy</a>
                     <span className="text-orange-500"> | </span>

@@ -1,6 +1,7 @@
 import { Environment, Float, OrbitControls } from "@react-three/drei";
 import { Book } from "./Book";
 export const Experience = () => {
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth <= 800 : false;
   return (
     <>
       <Float
@@ -9,7 +10,9 @@ export const Experience = () => {
         speed={2}
         rotationIntensity={2}
       >
-        <Book />
+        <group scale={isMobile ? 1.2 : 1}>
+          <Book />
+        </group>
       </Float>
       <OrbitControls 
         enableZoom={false}

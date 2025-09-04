@@ -165,7 +165,7 @@ function App() {
 
       {/* Footer Section */}
       <footer className="bg-[#010f0a] text-white">
-        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 flex flex-col md:flex-row justify-between items-start gap-8 md:gap-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-10 flex flex-col md:flex-row justify-center md:justify-between items-center md:items-start gap-6 sm:gap-10 md:gap-12">
           {/* Logo and Tagline */}
           <div className="space-y-3 -mt-4 text-center md:text-left">
             <img
@@ -173,22 +173,22 @@ function App() {
               alt="MathMentor Logo"
               className="h-20 md:h-28 w-auto object-contain mx-auto md:mx-0"
             />
-            <p className="text-white/60 text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
+            <p className="text-white/60 text-base sm:text-lg md:text-xl leading-relaxed max-w-[280px] mx-auto md:mx-0">
               Empowering students <br /> to master mathematics
             </p>
           </div>
 
           {/* Navigation */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Home
             </a>
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Services
             </a>
@@ -200,14 +200,14 @@ function App() {
             </a>
             <a
               href="#"
-              className="block text-white/90 text-lg md:text-xl hover:text-yellow-400"
+              className="block text-white/90 text-base sm:text-lg md:text-xl hover:text-yellow-400"
             >
               Blog
             </a>
           </div>
 
           {/* Social and Contact */}
-          <div className="space-y-4 text-center md:text-left">
+          <div className="space-y-3 sm:space-y-4 text-center md:text-left">
             <h4 className="text-lg md:text-xl font-medium">Follow us</h4>
             <div className="flex space-x-6 justify-center md:justify-start">
               <a href="#" aria-label="Facebook">
@@ -232,17 +232,17 @@ function App() {
                 />
               </a>
             </div>
-            <p className="text-white/80 text-lg md:text-xl">
+            <p className="text-white/80 text-base sm:text-lg md:text-xl break-words">
               hello@mathmentor.com
             </p>
           </div>
         </div>
 
         {/* Separator */}
-        <div className="border-t border-gray-700 mx-8 md:mx-24"></div>
+        <div className="border-t border-gray-700 mx-4 sm:mx-8 md:mx-24"></div>
 
         {/* Bottom Bar */}
-        <div className="text-center py-4 md:py-6 text-white/80 text-xs md:text-sm px-4">
+        <div className="text-center py-4 md:py-6 text-white/80 text-xs sm:text-sm px-4">
           © 2025 Mathmentor. All rights reserved.{" "}
           <a href="#" className="hover:text-yellow-400">
             Privacy Policy
@@ -278,7 +278,7 @@ const BookSection = ({ scrollYProgress }) => {
       <Canvas
         shadows
         camera={{
-          position: [-0.5, 1, window.innerWidth > 800 ? 4 : 9],
+          position: [-0.5, 1, window.innerWidth > 800 ? 4 : 5.5],
           fov: 45,
         }}
       >
@@ -388,18 +388,20 @@ const SecondSection = ({ scrollYProgress, onAboutClick }) => {
           {/* About */}
         </motion.div>
 
-        <div className="text-9xl font-bold mb-8 tracking-wider relative">
-          <span
-            className="inline-block relative"
-            style={{
-              fontFamily: "BerkshireSwash, cursive",
-              fontSize: "1.2em",
-              fontWeight: "900",
-            }}
-          >
-            A
-          </span>
-          <span className="inline-block relative">BOUT</span>
+        <div className="mb-8 relative">
+          <div className="flex items-baseline justify-center whitespace-nowrap leading-none tracking-wider text-7xl sm:text-8xl md:text-9xl lg:text-9xl font-bold">
+            <span
+              className="align-baseline"
+              style={{
+                fontFamily: "BerkshireSwash, cursive",
+                fontSize: "1.2em",
+                fontWeight: 900,
+              }}
+            >
+              A
+            </span>
+            <span className="align-baseline">BOUT</span>
+          </div>
         </div>
 
         <motion.p
@@ -522,18 +524,20 @@ const ThirdSection = ({ scrollYProgress, onStudentClick }) => {
           {/* Student */}
         </motion.div>
 
-        <div className="text-9xl font-bold mb-8 tracking-wider relative">
-          <span
-            className="inline-block relative"
-            style={{
-              fontFamily: "BerkshireSwash, cursive",
-              fontSize: "1.2em",
-              fontWeight: "900",
-            }}
-          >
-            S
-          </span>
-          <span className="inline-block relative">TUDENT</span>
+        <div className="mb-8 relative">
+          <div className="flex items-baseline justify-center whitespace-nowrap leading-none tracking-wider text-7xl sm:text-8xl md:text-9xl lg:text-9xl font-bold">
+            <span
+              className="align-baseline"
+              style={{
+                fontFamily: "BerkshireSwash, cursive",
+                fontSize: "1.2em",
+                fontWeight: 900,
+              }}
+            >
+              S
+            </span>
+            <span className="align-baseline">TUDENT</span>
+          </div>
         </div>
 
         <motion.p
@@ -641,18 +645,20 @@ const FourthSection = ({ scrollYProgress, onTutorClick }) => {
           {/* Tutor */}
         </motion.div>
 
-        <div className="text-9xl font-bold mb-8 tracking-wider relative">
-          <span
-            className="inline-block relative"
-            style={{
-              fontFamily: "BerkshireSwash, cursive",
-              fontSize: "1.2em",
-              fontWeight: "900",
-            }}
-          >
-            T
-          </span>
-          <span className="inline-block relative">UTOR</span>
+        <div className="mb-8 relative">
+          <div className="flex items-baseline justify-center whitespace-nowrap leading-none tracking-wider text-7xl sm:text-8xl md:text-9xl lg:text-9xl font-bold">
+            <span
+              className="align-baseline"
+              style={{
+                fontFamily: "BerkshireSwash, cursive",
+                fontSize: "1.2em",
+                fontWeight: 900,
+              }}
+            >
+              T
+            </span>
+            <span className="align-baseline">UTOR</span>
+          </div>
         </div>
 
         <motion.p
